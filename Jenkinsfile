@@ -5,11 +5,11 @@ node{
         checkout scm
     }
     stage('Build image'){
-        app = docker.build("gauthier/nginx")
+        app = docker.build("xavki/nginx")
     }    
     
     stage('Run image'){
-            docker.image(gauthier/nginx).withRun('-p 3000:3000') 
+            docker.image('xavki/nginx').withRun('-p 3000:3000') 
             {
                 sh 'docker ps'
             }
